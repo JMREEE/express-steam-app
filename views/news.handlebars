@@ -1,0 +1,55 @@
+<div class="about-title clearfix mx-auto accordion" id="accordionExample">
+    <h1 class= "mb-4">Rainbow Six Siege: News </h1>
+    {{#each newsData}}
+    <div class="card">
+
+        <div class="card-header" id="header_{{this.title}}">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#data_{{@index}}"
+                    aria-expanded="true" aria-controls="data_{{@index}}">
+                    {{this.title}}
+                </button>
+            </h2>
+        </div>
+        {{#if @index}}
+        <div id="data_{{@index}}" class="collapse" aria-labelledby="header_{{this.title}}"
+            data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="mb-2">
+                    <a href={{url}} target="_blank"><span>Click me</span></a>
+                </div>
+                <div name="contents-div">{{this.contents}}</div>
+                <div class= "mt-3"> Post created: {{this.date}}</div>
+            </div>
+        </div>
+        {{else}}
+        <div id="data_{{@index}}" class="collapse show" aria-labelledby="header_{{this.title}}"
+            data-parent="#accordionExample">
+
+            <div class="card-body">
+                <div class="mb-2">
+                    <a href={{url}} target="_blank" ><span>Click me</span></a>
+                </div>
+                 <div name="contents-div">{{this.contents}}</div>
+                <div class= "mt-3"> Post created: {{this.date}}</div>
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+
+    {{/each}}
+</div>
+
+<script>
+    function testFunction() {
+
+        let temp = document.getElementsByName("contents-div")
+
+        temp.forEach((item) => {
+            const tmp = item.innerText;
+            item.innerHTML = tmp;
+        })
+    }
+    testFunction()
+</script>
