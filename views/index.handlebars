@@ -1,5 +1,5 @@
 <div>
-    <div class="card mx-auto" style="width: 40rem;">
+    <div class="card mx-auto" style="max-width: 40rem;">
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">In Best SteamID Finder you can get more info about someones or yourselfs Steam profile
@@ -8,7 +8,7 @@
             <form action="/api/steam/getplayersummary" method="POST" class="mb4">
                 <div class="form-group">
                     <label for="name">Insert SteamID:</label>
-                    <input value="76561198149391194" type="text" placeholder="STEAM_1:1:28497369" name="name"
+                    <input value="" type="text" placeholder="Example: 7656119814939142198" name="name"
                         class="form-control">
                 </div>
 
@@ -20,7 +20,7 @@
 
     </div>
     {{#if response}}
-    <div class="card mx-auto mt-5" style="width: 40rem;">
+    <div class="card mx-auto mt-5" style="max-width: 40rem;">
         <div class="card-body">
             <div class="d-flex mb-3">
                 <img src={{this.response.avatarImgPath}} alt="" class="w-25">
